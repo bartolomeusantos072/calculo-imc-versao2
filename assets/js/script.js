@@ -4,22 +4,22 @@ form.addEventListener('submit',function verificarResultado(event){
         const resultado = form.querySelector('#resultado');
         const peso = form.querySelector('#peso');
         const altura = form.querySelector('#altura');
-        let calculo = new imc(peso.value,altura.value);
+        let obj = objImc.setImc(peso.value,altura.value);
     
             
-        resultado.innerHTML= ` ${calculo.imc && "Seu IMC é:"+calculo.imc+"."} ${calculo.msg}`;
+        resultado.innerHTML= ` ${objImc.imc && "Seu IMC é:"+objImc.imc+"."} ${objImc.msg}`;
         resultado.classList.remove(resultado.classList.item[0]);
-        resultado.classList.add(calculo.cor);
+        resultado.classList.add(objImc.cor);
            
 })
 
 
 
-let objImv = {
+let objImc = {
     imc: null,
     msg:null,
     cor:null,
-    setImg: function(peso,altura){
+    setImc: function(peso,altura){
         this.imc = (peso/(altura**2)).toFixed(2);
         switch (true) {
             case (this.imc < 16) && (this.imc > 15):
