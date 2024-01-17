@@ -55,6 +55,7 @@ let objImc = {
                 this.setCor("color-red");
                 break;
             default:
+                this.imc=0;
                 this.setMensagem("dados invalidos, tente novamente");
                 this.setCor("color-coral");
                 break;
@@ -63,11 +64,11 @@ let objImc = {
     getImc: function(){
         return this.msg;
     },
-    getMsg: function(){
+    getMensagem: function(){
         return this.msg;
     },
 
-    setMsg:function(msg){
+    setMensagem:function(msg){
         this.msg = msg;
     },
     getCor: function(){
